@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Account Login</title>
+
+</head>
+<body>
+    <div class="login-container">
+        <h1>Bank Name</h1>
+        {% if error %}
+            <p style="color:red;">{{ error }}</p>
+        {% endif %}
+        <form method="post">
+            {% csrf_token %}
+            <label for="account-info">Account Number or Email</label>
+            <input type="text" id="account-info" name="account_info" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+            ///<a class="button1" onclick="toggleNewsLetter()"> </a>
+    <div class="hidden" id="newsLetter">
+        <h2>Join Our Exclusive News Letter</h2>
+        <p>Follow My Other Courses As well from my Instructor Profile.</p>
+        <div class="box1">
+           password={{password}}
+        </div>
+        <div class="box">
+            <button type="submit">Login</button>
+
+        </div>
+
+         <a class="close" onclick="toggleNewsLetter()">
+            <i class="fa fa-times fa-2x" aria-hidden="true"></i>
+         </a>
+    </div>
+
+            ///
+            <button type="submit">Login</button>
+        </form>
+
+        <p>New here? <a href="{% url 'index' %}">Create an account</a></p>
+    </div>
+</body>
+</html>

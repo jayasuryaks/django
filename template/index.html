@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORM Validation Project</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Create Account</h1>
+        </div>
+        <form id="form" class="form">
+            {% csrf_token %}
+            <!-- Username Field -->
+            <div class="control-form">
+                <label for="username">Username</label>
+                <input type="text" placeholder="Vijay" id="username" name="username" required>
+                <small class="error"></small>
+            </div>
+
+            <!-- Email Field -->
+            <div class="control-form">
+                <label for="email">Email</label>
+                <input type="email" placeholder="qrp@abc.com" id="email" name="email" required>
+                <small class="error"></small>
+            </div>
+
+            <!-- Phone Number Field -->
+            <div class="control-form">
+                <label for="phone">Phone Number</label>
+                <input type="text" placeholder="123-456-7890" id="phone" name="phone" required>
+                <small class="error"></small>
+            </div>
+
+            <!-- Address Field -->
+<!--            <div class="control-form">-->
+<!--                <label for="address">Address</label>-->
+<!--                <input type="text" placeholder="123 Main St, City, State" id="address" name="address" required>-->
+<!--                <small class="error"></small>-->
+<!--            </div>-->
+              <input type="hidden" id="password" name="password" value="">
+            <!-- Account Type Selection -->
+            <div class="control-form">
+                <label for="accountType">Account Type</label>
+                <select id="accountType" name="accountType" required>
+                    <option value="">Select Account Type</option>
+                    <option value="savings">Savings</option>
+                    <option value="current">Current</option>
+                </select>
+                <small class="error"></small>
+            </div>
+
+
+            <!-- Initial Deposit Field -->
+            <div class="control-form">
+                <label for="deposit">Initial Deposit</label>
+                <input type="text" placeholder="Enter Initial Deposit" id="deposit" name="deposit" required>
+                <small class="error"></small>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit">Submit</button>
+        </form>
+           <p> <a href="{% url 'login' %}">Already have an account</a></p>
+    </div>
+
+     <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
